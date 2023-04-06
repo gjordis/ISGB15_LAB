@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+.d-none{
+    display: none !important;
+}
+
+/*Enhet 1 - mindre än 415px bred*/
+
+body{
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%; 
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+html{
+    display: flex;
+    
+    font-size: 16px;
+}
+
+.jumbotron{
+    width: 100%;
+    background-color: #DEDEDE;
+    padding: 1.5rem;
+    border-radius: 0.3rem;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.text-center{
+    justify-content: center;
+}
+
+#div-in-form{
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid silver;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.125);
+    justify-content: center;
+}
+
+input[type="text"]{
+    display: block;
+    width: 100%;
+    border: 1px solid silver;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.03); 
+    border-radius: 0.2rem;
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+    height: 2rem;
+}
+
+input[type="color"]{
+    display: block;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border: 1px solid silver;
+    width: 100%;
+    background: none;
+    padding: 0.25rem;
+}
+
+#newGame{
+    display: inline-block;
+    padding: 0.25rem 0.25rem;
+    background-color: rgb(40, 130, 250);
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#div-with-a{
+    text-align: right;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 2px 2px 6px rgb(40, 130, 250);
+    outline: none;
+}
+
+aside{
+    display: none;
+}
+
+.gameArea{
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.gameArea table{
+    border-spacing: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gameArea td{
+    height: 125px;
+    width: 125px;
+    font-size: 50px;
+    border: 1px solid darkgray;
+}
+
+
+/*Enhet 2: Större än 414px bred men mindre än 1181px bred*/
+
+@media (min-width: 415px) and (max-width: 1181px){
+    aside{
+        display: flex;
+        width: 30%;
+        max-width: 100%;
+        height: auto;
+    }
+    aside img{
+        width: 100%;
+    }
+
+    main{
+        width: 50%;
+    }
+    .gameArea td{
+        width: 125px;
+        height: 125px;
+    }
+    html{
+        font-size: 18px;
+    }
+}
+
+/*Enhet 3: Större än 1181px bred*/
+
+@media (min-width: 1182px){
+    main{
+        width: 70%;
+    }
+    aside{
+        display: flex;
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+    }
+    aside img{
+        width: 100%;
+    }
+    #newGame:hover{   
+        background-color: lightcoral;
+        color: black;
+        cursor: pointer;
+    }
+    .gameArea td{
+        height: 200px;
+        width: 200px;
+    }
+    .col{
+        width: 49%;
+        box-sizing: border-box;
+        float: left;
+        padding: 0 1%;
+    }
+    html{
+        font-size: 22px;
+    }
+
+    #div-with-a{
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
