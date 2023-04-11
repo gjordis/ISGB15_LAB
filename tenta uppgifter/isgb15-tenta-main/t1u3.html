@@ -1,0 +1,32 @@
+<!--Tenta 2022-04-14, Uppgift 3 -->
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentauppgifter</title>
+</head>
+
+<body>
+    <form method="post">
+        <div id="error"></div>
+        <label for="email">Fyll i e-post</label><br>
+        <input type="text" id="email" placeholder="epost@epost.com"><br>
+        <p>Välj ditt ärende</p>
+        <input type="radio" name="arende" value="bird" checked> Kontakta mig om fåglar<br>
+        <input type="radio" name="arende" value="boat"> Kontakta mig om båtar<br>
+        <input type="radio" name="arende" value="fish"> Kontakta mig om fiske<br>
+        <input type="radio" name="arende" value="travel"> Kontakta mig om resor<br>
+        <label for="klockslag">Välj en tid när du vill bli kontaktad:</label>
+        <select id="klockslag">
+            <option value="8">klockan 8:00-8:30</option>
+            <option value="8.5">klockan 8:30-9:00</option>
+            <option value="9" selected>klockan 9:00-9:30</option>
+        </select><br>
+        <button type="submit">Skicka förfrågan</button><br><br>
+    </form>
+    <script src="js/JSFunctionU3.js"></script>
+</body>
+
+</html>

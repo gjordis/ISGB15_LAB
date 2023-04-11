@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentafråga 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td data-type="item" data-price="63">Pasta</td>
+            <td data-type="item" data-price="69">Ris</td>
+            <td data-type="item" data-price="59">Potatis</td>
+        </tr>
+        <tr>
+            <td data-type="ad">KAU.se</td>
+            <td data-type="ad">Beställ den bästa maten</td>
+            <td data-type="ad">KAU.se</td>
+        </tr>
+    </table>
+    <hr>
+    <div id="order">
+        <h1>Beställning</h1>
+    </div>
+    <hr>
+    <div id="checkout">
+        <a href="https://www.kau.se" id="pay" data-type="pay">Betala</a>
+        <p id="status"></p>
+    </div>
+    <script>
+        window.addEventListener("load", function(){ //lägger en lyssnare för när hela sidan har laddats
+
+            document.querySelector("table").addEventListener("click", addItem); // lägger en lyssnare på hela tabellen, lyssnar efter click och kör funktionen additem
+
+        
+
+        function addItem(event) { // skickar med "event" som kan användas för att referera till det som trycks på
+            if (e.target.getAttribute('data-type') === 'item') { // om det som trycks på har en data-type med värde item görs följande
+                let newDiv = document.createElement('div'); // skapar ett nytt element som är en 'div' och tilldelar detta till en variabel
+                let newH4 = document.createElement('h4'); // skapar ett nytt element som är en 'h4' och tilldelar detta till en variabel
+                let newP = document.createElement('p'); // skapar ett nytt element som är en 'p' och tilldelar detta till en variabel
+
+                newH4.textContent = event.target.textContent; // ändrar newH4´s textcontent till det textconten som trycks på har
+                newP.textContent = event.target.getAttribute('data-price') + ' kr'; // hämtar ut attributet 'data-price' från det som trycks på och lägger även till strängen ' kr' efter. detta tilldelar jag till variabeln newP´s textcontent
+
+                newDiv.appendChild(newH4); // lägger in newH4 i den nya diven, alltså kommer det läggas ett h1 element innanför den skapade diven
+                newDiv.appendChild(newP); // lägger in newP i den nya diven, alltså kommer det läggas ett p element innanför den skapade diven
+                document.querySelector('div[id=order]').appendChild(newDiv); // lägger in den skapade diven på platsen div med id= order
+            }
+        }
+
+        document.querySelector('#pay').addEventListener('click', function(e){ // lägger en lyssnare på id "pay" som är knappen för att betala. lyssnar efter click, funktionen skickar med ett event (e)
+            e.preventDefault(); // För att avbryta default beteendet, så att sidan ej krashar
+            e.stopPropagation(); // avbryter att händelsen bubblar upp
+            document.querySelector("table").removeEventListener("click", addItem); // tar bort lyssnaren på hela tabellen så användaren ej kan lägga till i varukorgen
+            document.querySelector('p[id=status]').textContent = 'klart!' // ändrar p taggen med id status till texten 'klart!' som visar att betalningen är klar
+        });
+
+        
+    });
+        
+
+    </script>
+</body>
+
+</html>
